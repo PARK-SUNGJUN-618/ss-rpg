@@ -1,10 +1,16 @@
+using Cinemachine;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityFX : MonoBehaviour
 {
+    private Player player;
     private SpriteRenderer sr;
+
+    [Header("Screen Shake FX")]
+    private CinemachineImpulseSource screenShake;
+    [SerializeField] private float shakeMultiplier;
+    [SerializeField] private Vector3 shakePower;
 
     [Header("After Image FX")]
     [SerializeField] private GameObject afterImagePrefab;
@@ -37,12 +43,20 @@ public class EntityFX : MonoBehaviour
     private void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
+        player = PlayerManager.instance.player;
+        screenShake = GetComponent<CinemachineImpulseSource>();
         originalMat = sr.material;
     }
 
     private void Update()
     {
         afterImageCooldownTimer -= Time.deltaTime;
+    }
+
+    public void ScreenShake()
+    {
+        screenShake.m_DefaultVelocity = new Vector3(shakePower.x * player.facingDir, shakePower.y) * shakeMultiplier;
+        screenShake.GenerateImpulse();
     }
 
     public void CreateAfterImage()
