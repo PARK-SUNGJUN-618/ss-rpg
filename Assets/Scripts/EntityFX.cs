@@ -10,7 +10,9 @@ public class EntityFX : MonoBehaviour
     [Header("Screen Shake FX")]
     private CinemachineImpulseSource screenShake;
     [SerializeField] private float shakeMultiplier;
-    [SerializeField] private Vector3 shakePower;
+    // [SerializeField] private Vector3 shakePower;
+    public Vector3 shakeSwordImpact;
+    public Vector3 shakeHighDamage;
 
     [Header("After Image FX")]
     [SerializeField] private GameObject afterImagePrefab;
@@ -53,9 +55,9 @@ public class EntityFX : MonoBehaviour
         afterImageCooldownTimer -= Time.deltaTime;
     }
 
-    public void ScreenShake()
+    public void ScreenShake(Vector3 _shakePower)
     {
-        screenShake.m_DefaultVelocity = new Vector3(shakePower.x * player.facingDir, shakePower.y) * shakeMultiplier;
+        screenShake.m_DefaultVelocity = new Vector3(_shakePower.x * player.facingDir, _shakePower.y) * shakeMultiplier;
         screenShake.GenerateImpulse();
     }
 
