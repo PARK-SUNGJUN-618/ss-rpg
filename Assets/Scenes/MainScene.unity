@@ -1076,8 +1076,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
-  m_fontSizeBase: 19
+  m_fontSize: 18.7
+  m_fontSizeBase: 18.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3898,8 +3898,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca172176afda6d41a17f360e67251d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpTextPrefab: {fileID: 3082680094011177210, guid: d5399b78bfcdf2f4999a1d41e85ea564, type: 3}
   shakeMultiplier: 0.2
-  shakePower: {x: 1, y: 0.1, z: 0}
+  shakeSwordImpact: {x: 1, y: 0, z: 0}
+  shakeHighDamage: {x: 2, y: 2, z: 0}
   afterImagePrefab: {fileID: 3429980477387592909, guid: c0a3394968f0bee44841bfe35e5a5892, type: 3}
   colorLooseRate: 2
   afterImageCooldown: 0.05
@@ -13784,8 +13786,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca172176afda6d41a17f360e67251d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpTextPrefab: {fileID: 3082680094011177210, guid: d5399b78bfcdf2f4999a1d41e85ea564, type: 3}
   shakeMultiplier: 0
-  shakePower: {x: 0, y: 0, z: 0}
+  shakeSwordImpact: {x: 0, y: 0, z: 0}
+  shakeHighDamage: {x: 0, y: 0, z: 0}
   afterImagePrefab: {fileID: 0}
   colorLooseRate: 0
   afterImageCooldown: 0
@@ -46543,8 +46547,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
-  m_fontSizeBase: 19
+  m_fontSize: 18.7
+  m_fontSizeBase: 18.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
