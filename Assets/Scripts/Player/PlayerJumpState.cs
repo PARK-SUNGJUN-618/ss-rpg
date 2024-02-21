@@ -28,6 +28,7 @@ public class PlayerJumpState : PlayerState
             stateMachine.ChangeState(player.airState);
 
         // TODO Jun To move when jumping
+        // if you want player can not move when jumping, delete this code
         if (xInput != 0)
             player.SetVelocity(player.moveSpeed * .8f * xInput, rb.velocity.y);
     }
